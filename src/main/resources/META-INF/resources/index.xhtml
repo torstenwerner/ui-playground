@@ -12,10 +12,12 @@
 
     <h:body styleClass="ui-widget">
         <p>
-            <h:outputText value="#{randomText.text}"/>
+            counter: <h:outputText id="counter" value="#{business.counter}"/>
         </p>
         <p>
-            <p:link href="http://www.primefaces.org" value="Primefaces"/>
+            <h:form>
+                <p:commandButton icon="fa fa-plus" title="click me" action="#{business.increment}" update="counter"/>
+            </h:form>
         </p>
     </h:body>
 </f:view>

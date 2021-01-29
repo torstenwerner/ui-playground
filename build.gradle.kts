@@ -1,7 +1,8 @@
 plugins {
+    java
     id("org.springframework.boot") version "2.4.2"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
-    java
+    id("org.joinfaces") version "4.4.2"
 }
 
 group = "xyz.its-me"
@@ -13,7 +14,8 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-web")
+//    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.joinfaces:primefaces-spring-boot-starter")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 

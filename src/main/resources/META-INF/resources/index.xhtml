@@ -11,7 +11,7 @@
     </h:head>
 
     <h:body styleClass="ui-widget">
-        <comp:counter/>
+        <comp:counter label="the value of the counter" getValue="#{business.counter}" incrementValue="#{business.increment}"/>
     </h:body>
 </f:view>
 </html>

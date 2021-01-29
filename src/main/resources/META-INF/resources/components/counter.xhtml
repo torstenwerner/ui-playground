@@ -5,15 +5,19 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:c="http://java.sun.com/jsf/composite">
 
-<c:interface/>
+<c:interface>
+    <c:attribute name="label" default="counter" shortDescription="an optional label the defaults to counter"/>
+    <c:attribute name="getValue" shortDescription="an int value"/>
+    <c:attribute name="incrementValue" method-signature="void incrementValue()" shortDescription="callback method for incrementing the counter"/>
+</c:interface>
 
 <c:implementation>
     <h:form>
         <p>
-            counter: <h:outputText id="counter" value="#{business.counter}"/>
+            <h:outputText value="#{cc.attrs.label}"/>: <h:outputText id="counter" value="#{cc.attrs.getValue}"/>
         </p>
         <p>
-            <p:commandButton icon="fa fa-plus" title="click me" action="#{business.increment}" update="counter"/>
+            <p:commandButton icon="fa fa-plus" title="click me" action="#{cc.attrs.incrementValue}" update="counter"/>
         </p>
     </h:form>
 </c:implementation>

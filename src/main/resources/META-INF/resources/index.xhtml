@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:comp="http://java.sun.com/jsf/composite/components">
 
 <f:view>
     <h:head>
@@ -11,14 +11,7 @@
     </h:head>
 
     <h:body styleClass="ui-widget">
-        <p>
-            counter: <h:outputText id="counter" value="#{business.counter}"/>
-        </p>
-        <p>
-            <h:form>
-                <p:commandButton icon="fa fa-plus" title="click me" action="#{business.increment}" update="counter"/>
-            </h:form>
-        </p>
+        <comp:counter/>
     </h:body>
 </f:view>
 </html>

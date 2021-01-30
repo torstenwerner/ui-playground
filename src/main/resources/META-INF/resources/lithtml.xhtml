@@ -14,7 +14,7 @@
     <x-counter value="5" label="the value of the counter"></x-counter>
     <h:outputScript>
         document.querySelector("x-counter").onsubmit = event =>
-            console.log(`successfully submitted value \${event.detail.value}`);
+                console.log(`successfully submitted value \${event.detail.value}`);
     </h:outputScript>
 </h:body>
 </html>

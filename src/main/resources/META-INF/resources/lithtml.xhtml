@@ -8,15 +8,13 @@
     <title>lithtml test</title>
     <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
     <h:outputScript name="lithtml.js" library="js" pt:type="module"/>
-    <h:outputScript>
-        function onSubmit(event) {
-            const message = `successfully submitted value \${event.detail.value}`;
-            console.log(message)
-        }
-    </h:outputScript>
 </h:head>
 
 <h:body>
-    <x-counter value="5" label="the value of the counter" onsubmit="onSubmit(event)"></x-counter>
+    <x-counter value="5" label="the value of the counter"></x-counter>
+    <h:outputScript>
+        document.querySelector("x-counter").onsubmit = event =>
+            console.log(`successfully submitted value \${event.detail.value}`);
+    </h:outputScript>
 </h:body>
 </html>

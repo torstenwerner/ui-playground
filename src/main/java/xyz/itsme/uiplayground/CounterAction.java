@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class CounterAction implements Serializable {
     private final AtomicInteger counter = new AtomicInteger(0);
     
-    private CounterDao counterDao;
+    private final CounterDao counterDao;
 
     public CounterAction(CounterDao counterDao) {
         this.counterDao = counterDao;

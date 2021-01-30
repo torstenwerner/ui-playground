@@ -15,8 +15,15 @@ class XCounter extends LitElement {
     }
 
     submit() {
-        fetch(`/api/save/${this.value}`, {method: "POST"}).then(response =>
-            console.log(`saved value ${this.value} successfully`));
+        fetch(`/api/save/${this.value}`, {method: "POST"}).then(response => {
+            const event = new CustomEvent('submit', {
+                detail: {
+                    message: 'Submitted value successfully',
+                    value: this.value
+                }
+            });
+            this.dispatchEvent(event);
+        });
     }
 
     render() {

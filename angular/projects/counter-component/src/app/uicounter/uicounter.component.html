@@ -1,1 +1,10 @@
-<p>uicounter works!</p>
+<style>
+  button,
+  p {
+    display: inline-block;
+  }
+</style>
+<button (click)="decrement()" aria-label="decrement">-</button>
+<p>{{counter}}</p>
+<button (click)="increment()" aria-label="increment">+</button>
+<button (click)="submit()" aria-label="submit">submit</button>

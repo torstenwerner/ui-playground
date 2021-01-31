@@ -1,4 +1,4 @@
-import { NgModule, DoBootstrap, Injector } from '@angular/core';
+import { NgModule, DoBootstrap, Injector, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { createCustomElement } from '@angular/elements';
 
@@ -15,7 +15,8 @@ import { UICounterComponent } from './uicounter/uicounter.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [UICounterComponent]
+  entryComponents: [UICounterComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule implements DoBootstrap {
   constructor(private injector: Injector) {
